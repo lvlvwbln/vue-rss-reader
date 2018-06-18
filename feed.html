@@ -1,0 +1,24 @@
+<div id="app">
+    <ul v-for="article in articles">
+        <p>Article {{ article.id}} </p>
+        <li>{{ article.title }}</li>
+        <li>{{ article.date }}</li>
+        <li>{{ article.content }}</li>
+        <li v-if="article.read === true">Already read</li>
+        <li v-else>Not read yet</li>
+    </ul>
+</div>
+<script src="https://unpkg.com/vue">
+</script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            articles: [
+                {id: 1, title:'Foo', date: 'bar', content: 'foobar', read: false},
+                {id: 2, title:'Xiao', date: 'teste', content: 'uhul', read: true},
+            ]
+        }
+    });
+</script>
